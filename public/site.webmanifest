@@ -1,0 +1,16 @@
+{
+  "name": "Trinca Engenharia | Obras Financiadas em Maringá",
+  "short_name": "Trinca Engenharia",
+  "description": "Da aprovação do financiamento à entrega das chaves. Especialistas em construções financiadas em Maringá e região.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07162c",
+  "theme_color": "#07162c",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
