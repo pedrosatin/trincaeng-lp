@@ -1,0 +1,236 @@
+<!doctype html>
+<!--
+  Fonte da imagem de compartilhamento (Open Graph / Twitter), 1200x630.
+  Para regenerar public/og-image.png depois de editar: npm run og-image
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: 'Space Grotesk';
+        src: url('../src/fontes/space-grotesk-latin.woff2') format('woff2');
+        font-weight: 300 700;
+      }
+      @font-face {
+        font-family: 'Plus Jakarta Sans';
+        src: url('../src/fontes/plus-jakarta-sans-latin.woff2') format('woff2');
+        font-weight: 200 800;
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('../src/fontes/jetbrains-mono-latin.woff2') format('woff2');
+        font-weight: 100 800;
+      }
+
+      :root {
+        --navy: #07162c;
+        --navy-2: #0d213f;
+        --blue: #3158a3;
+        --blue-light: #608ce0;
+        --brass: #dfb468;
+        --concrete: #f3f6fa;
+        --muted: #94a7c4;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        position: relative;
+        background: var(--navy);
+        color: var(--concrete);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      /* Malha de prancha técnica */
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(96, 140, 224, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 140, 224, 0.07) 1px, transparent 1px),
+          linear-gradient(rgba(96, 140, 224, 0.13) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(96, 140, 224, 0.13) 1px, transparent 1px);
+        background-size:
+          24px 24px,
+          24px 24px,
+          120px 120px,
+          120px 120px;
+      }
+
+      .sheet {
+        position: absolute;
+        inset: 36px;
+        border: 1.5px solid rgba(148, 167, 196, 0.35);
+        display: grid;
+        grid-template-columns: 1fr 380px;
+      }
+
+      .content {
+        padding: 56px 48px 48px 56px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo svg {
+        width: 72px;
+        height: 66px;
+      }
+
+      .logo-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: 0.14em;
+        line-height: 1;
+      }
+
+      .logo-subtitle {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.42em;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+
+      h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 56px;
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        margin-top: auto;
+      }
+
+      h1 em {
+        font-style: normal;
+        color: var(--brass);
+      }
+
+      .lead {
+        font-size: 23px;
+        line-height: 1.4;
+        color: #c9d5e8;
+        margin-top: 22px;
+        max-width: 620px;
+      }
+
+      /* Carimbo lateral, como o selo de uma prancha */
+      .stamp {
+        border-left: 1.5px solid rgba(148, 167, 196, 0.35);
+        display: grid;
+        grid-template-rows: 1fr auto auto auto;
+      }
+
+      .stamp-drawing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px;
+      }
+
+      .stamp-drawing svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .stamp-row {
+        border-top: 1.5px solid rgba(148, 167, 196, 0.35);
+        padding: 16px 24px;
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .stamp-label {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+      }
+
+      .stamp-value {
+        font-size: 20px;
+        margin-top: 6px;
+        color: var(--concrete);
+      }
+
+      .stamp-value.accent {
+        color: var(--brass);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+
+    <main class="sheet">
+      <section class="content">
+        <div class="logo">
+          <svg viewBox="0 0 64 58" fill="none" aria-hidden="true">
+            <polygon points="4,32 45,5 45,17 17,36" fill="#608CE0" />
+            <polygon points="4,32 17,36 44,49 44,55" fill="#3E65B0" />
+            <polygon points="45,5 56,11 56,51 44,55 44,17" fill="#264178" />
+            <polygon points="17,36 44,17 44,26 27,38" fill="#8FB2F2" />
+          </svg>
+          <div>
+            <div class="logo-title">TRINCA</div>
+            <div class="logo-subtitle">ENGENHARIA</div>
+          </div>
+        </div>
+
+        <h1>Da aprovação do financiamento à <em>entrega das chaves.</em></h1>
+        <p class="lead">
+          Construções financiadas pela Caixa em Maringá: Minha Casa Minha Vida e SBPE.
+        </p>
+      </section>
+
+      <aside class="stamp">
+        <div class="stamp-drawing">
+          <!-- Fachada em corte simplificado: casa térrea com platibanda -->
+          <svg viewBox="0 0 300 200" fill="none" aria-hidden="true">
+            <g stroke="#608CE0" stroke-width="2">
+              <rect x="40" y="70" width="220" height="110" />
+              <line x1="30" y1="70" x2="270" y2="70" />
+              <rect x="30" y="56" width="240" height="14" />
+              <rect x="70" y="110" width="60" height="70" />
+              <rect x="160" y="100" width="70" height="44" />
+              <line x1="195" y1="100" x2="195" y2="144" />
+              <line x1="10" y1="180" x2="290" y2="180" stroke-width="3" />
+            </g>
+            <g stroke="#DFB468" stroke-width="1.5" stroke-dasharray="4 4">
+              <line x1="40" y1="194" x2="260" y2="194" />
+              <line x1="40" y1="186" x2="40" y2="200" stroke-dasharray="none" />
+              <line x1="260" y1="186" x2="260" y2="200" stroke-dasharray="none" />
+              <line x1="284" y1="56" x2="284" y2="180" />
+            </g>
+          </svg>
+        </div>
+        <div class="stamp-row">
+          <div class="stamp-label">LOCAL</div>
+          <div class="stamp-value">Maringá · PR</div>
+        </div>
+        <div class="stamp-row">
+          <div class="stamp-label">ECONOMIA VS. IMÓVEL PRONTO</div>
+          <div class="stamp-value accent">20% a 30%</div>
+        </div>
+        <div class="stamp-row">
+          <div class="stamp-label">SITE</div>
+          <div class="stamp-value">trincaconstrutora.com.br</div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

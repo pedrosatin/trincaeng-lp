@@ -25,6 +25,7 @@ O projeto foi organizado em camadas separadas para simplificar a manutenção hu
   - `structuredData.ts`: geração do grafo JSON-LD (`GeneralContractor` e `FAQPage`).
 - `src/components/`: seções modulares da página (`SiteHeader`, `HeroSection`, `SimulatorSection`, `ModalitiesSection`, `PortfolioSection`, `EngineeringNotebookSection`, `ProcessTimelineSection`, `FaqSection`, `ContactSection`, `Footer`, `TrincaLogo`).
 - `src/fontes/`: fontes variáveis `.woff2` servidas localmente (`Space Grotesk`, `Plus Jakarta Sans` e `JetBrains Mono`).
+- `scripts/og-image.html` e `scripts/og-image.mjs`: fonte e gerador da imagem de compartilhamento `public/og-image.png` (1200x630). Depois de editar o HTML, rode `npm run og-image`.
 - `scripts/prerender.mjs`: script de pós-build que injeta o HTML renderizado em servidor dentro de `dist/index.html`, adiciona `<link rel="preload">` para as fontes com hash e atualiza a data do `sitemap.xml`.
 
 ## Como executar e validar
