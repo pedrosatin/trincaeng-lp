@@ -67,6 +67,14 @@ describe('LandingPage', () => {
     expect(screen.queryByRole('navigation', { name: /Menu de navegação móvel/i })).not.toBeInTheDocument();
   });
 
+  it('renders blueprint callouts as accessible HTML instead of unwrappable SVG text nodes', () => {
+    const { container } = render(<LandingPage />);
+    expect(container.querySelectorAll('svg text').length).toBe(0);
+    expect(
+      screen.getByText(/Platibanda impermeabilizada com junta elástica em tela/i),
+    ).toBeInTheDocument();
+  });
+
   it('contains no em-dashes or en-dashes in rendered text (unslop-br compliance)', () => {
     const { container } = render(<LandingPage />);
     const visibleText = container.textContent ?? '';

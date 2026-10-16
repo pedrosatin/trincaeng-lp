@@ -8,74 +8,75 @@ const ProjectBlueprintGraphic: React.FC<{ readonly projectId: string }> = ({ pro
   switch (projectId) {
     case 'obra-genebra':
       return (
-        <svg viewBox="0 0 420 200" className="portfolio-svg" aria-hidden="true">
-          <rect width="420" height="200" fill="#0B1B33" />
-          <line x1="20" y1="168" x2="400" y2="168" stroke="#DFB468" strokeWidth="2" />
+        <svg viewBox="0 0 420 175" className="portfolio-svg" aria-hidden="true">
+          <rect width="420" height="175" fill="#0B1B33" />
+          <line x1="20" y1="154" x2="400" y2="154" stroke="#DFB468" strokeWidth="2.2" />
           {/* Volume Garagem e Gourmet */}
-          <rect x="44" y="82" width="150" height="86" fill="#162D54" stroke="#84A9EA" strokeWidth="1.5" />
-          <rect x="36" y="72" width="166" height="14" fill="#2A4D8E" stroke="#BFD4FA" strokeWidth="1.5" />
+          <rect x="44" y="68" width="150" height="86" fill="#162D54" stroke="#84A9EA" strokeWidth="1.6" />
+          <rect x="36" y="56" width="166" height="14" fill="#2A4D8E" stroke="#BFD4FA" strokeWidth="1.6" />
           {/* Volume Suíte e Estar Pé-direito Duplo */}
-          <rect x="194" y="42" width="182" height="126" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.8" />
-          <line x1="194" y1="60" x2="376" y2="60" stroke="#DFB468" strokeDasharray="5 3" strokeWidth="1.5" />
+          <rect x="194" y="28" width="182" height="126" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.8" />
+          <line x1="194" y1="46" x2="376" y2="46" stroke="#DFB468" strokeDasharray="5 3" strokeWidth="1.8" />
           {/* Brises e Esquadria */}
-          <rect x="260" y="72" width="96" height="96" fill="rgba(132, 169, 234, 0.2)" stroke="#84A9EA" strokeWidth="1.3" />
-          <line x1="212" y1="62" x2="212" y2="168" stroke="#DFB468" strokeWidth="1.4" />
-          <line x1="222" y1="62" x2="222" y2="168" stroke="#DFB468" strokeWidth="1.4" />
-          <line x1="232" y1="62" x2="232" y2="168" stroke="#DFB468" strokeWidth="1.4" />
-          <text x="52" y="185" fill="#94A7C4" fontSize="9.5" fontFamily="monospace">
-            ELEVAÇÃO FRONTAL // 148 m² CONSTRUÍDOS // LOTE 300 m²
-          </text>
+          <rect x="260" y="58" width="96" height="96" fill="rgba(132, 169, 234, 0.2)" stroke="#84A9EA" strokeWidth="1.4" />
+          <line x1="212" y1="48" x2="212" y2="154" stroke="#DFB468" strokeWidth="1.5" />
+          <line x1="222" y1="48" x2="222" y2="154" stroke="#DFB468" strokeWidth="1.5" />
+          <line x1="232" y1="48" x2="232" y2="154" stroke="#DFB468" strokeWidth="1.5" />
         </svg>
       );
     case 'obra-siena':
       return (
-        <svg viewBox="0 0 420 200" className="portfolio-svg" aria-hidden="true">
-          <rect width="420" height="200" fill="#0B1B33" />
-          <line x1="20" y1="168" x2="400" y2="168" stroke="#DFB468" strokeWidth="2" />
+        <svg viewBox="0 0 420 175" className="portfolio-svg" aria-hidden="true">
+          <rect width="420" height="175" fill="#0B1B33" />
+          <line x1="20" y1="154" x2="400" y2="154" stroke="#DFB468" strokeWidth="2.2" />
           {/* Casa térrea racionalizada */}
-          <rect x="58" y="64" width="140" height="104" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.6" />
-          <rect x="198" y="84" width="164" height="84" fill="#162D54" stroke="#84A9EA" strokeWidth="1.5" />
+          <rect x="58" y="48" width="140" height="106" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.7" />
+          <rect x="198" y="68" width="164" height="86" fill="#162D54" stroke="#84A9EA" strokeWidth="1.6" />
           {/* Verga e contraverga destacadas */}
-          <rect x="82" y="96" width="90" height="46" fill="rgba(132, 169, 234, 0.2)" stroke="#84A9EA" strokeWidth="1.3" />
-          <line x1="74" y1="93" x2="180" y2="93" stroke="#DFB468" strokeWidth="2.2" />
-          <line x1="74" y1="145" x2="180" y2="145" stroke="#DFB468" strokeWidth="2.2" />
-          <text x="58" y="185" fill="#94A7C4" fontSize="9.5" fontFamily="monospace">
-            PLANTA INTEGRADA // 112 m² CONSTRUÍDOS // VERGAS MOLDADAS
-          </text>
+          <rect x="82" y="80" width="90" height="46" fill="rgba(132, 169, 234, 0.2)" stroke="#84A9EA" strokeWidth="1.4" />
+          <line x1="74" y1="77" x2="180" y2="77" stroke="#DFB468" strokeWidth="2.4" />
+          <line x1="74" y1="129" x2="180" y2="129" stroke="#DFB468" strokeWidth="2.4" />
         </svg>
       );
     case 'obras-mercedes':
       return (
-        <svg viewBox="0 0 420 200" className="portfolio-svg" aria-hidden="true">
-          <rect width="420" height="200" fill="#0B1B33" />
-          <line x1="20" y1="168" x2="400" y2="168" stroke="#DFB468" strokeWidth="2" />
+        <svg viewBox="0 0 420 175" className="portfolio-svg" aria-hidden="true">
+          <rect width="420" height="175" fill="#0B1B33" />
+          <line x1="20" y1="154" x2="400" y2="154" stroke="#DFB468" strokeWidth="2.2" />
           {/* Galpão / Showroom Corporativo */}
-          <rect x="40" y="48" width="340" height="120" fill="#162D54" stroke="#D1E1FC" strokeWidth="1.8" />
+          <rect x="40" y="34" width="340" height="120" fill="#162D54" stroke="#D1E1FC" strokeWidth="1.8" />
           {/* Pórticos metálicos e fachada cortina */}
-          <line x1="125" y1="48" x2="125" y2="168" stroke="#84A9EA" strokeWidth="1.4" />
-          <line x1="210" y1="48" x2="210" y2="168" stroke="#84A9EA" strokeWidth="1.4" />
-          <line x1="295" y1="48" x2="295" y2="168" stroke="#84A9EA" strokeWidth="1.4" />
-          <line x1="40" y1="82" x2="380" y2="82" stroke="#DFB468" strokeWidth="1.6" />
-          <text x="42" y="185" fill="#94A7C4" fontSize="9.5" fontFamily="monospace">
-            PADRÃO CORPORATIVO // 320 m² // PISO DE ALTO TRÁFEGO
-          </text>
+          <line x1="125" y1="34" x2="125" y2="154" stroke="#84A9EA" strokeWidth="1.5" />
+          <line x1="210" y1="34" x2="210" y2="154" stroke="#84A9EA" strokeWidth="1.5" />
+          <line x1="295" y1="34" x2="295" y2="154" stroke="#84A9EA" strokeWidth="1.5" />
+          <line x1="40" y1="68" x2="380" y2="68" stroke="#DFB468" strokeWidth="1.8" />
         </svg>
       );
     default:
       return (
-        <svg viewBox="0 0 420 200" className="portfolio-svg" aria-hidden="true">
-          <rect width="420" height="200" fill="#0B1B33" />
-          <line x1="20" y1="168" x2="400" y2="168" stroke="#DFB468" strokeWidth="2" />
+        <svg viewBox="0 0 420 175" className="portfolio-svg" aria-hidden="true">
+          <rect width="420" height="175" fill="#0B1B33" />
+          <line x1="20" y1="154" x2="400" y2="154" stroke="#DFB468" strokeWidth="2.2" />
           {/* Showroom Automotivo Rápido */}
-          <rect x="48" y="58" width="324" height="110" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.8" />
-          <rect x="68" y="76" width="284" height="14" fill="rgba(223, 180, 104, 0.28)" stroke="#DFB468" strokeWidth="1.3" />
-          <rect x="92" y="106" width="96" height="62" fill="rgba(132, 169, 234, 0.22)" stroke="#84A9EA" strokeWidth="1.3" />
-          <rect x="232" y="106" width="96" height="62" fill="rgba(132, 169, 234, 0.22)" stroke="#84A9EA" strokeWidth="1.3" />
-          <text x="48" y="185" fill="#94A7C4" fontSize="9.5" fontFamily="monospace">
-            SHOWROOM AUTOMOTIVO // 185 m² // CICLO RÁPIDO
-          </text>
+          <rect x="48" y="42" width="324" height="112" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.8" />
+          <rect x="68" y="60" width="284" height="14" fill="rgba(223, 180, 104, 0.28)" stroke="#DFB468" strokeWidth="1.4" />
+          <rect x="92" y="90" width="96" height="64" fill="rgba(132, 169, 234, 0.22)" stroke="#84A9EA" strokeWidth="1.4" />
+          <rect x="232" y="90" width="96" height="64" fill="rgba(132, 169, 234, 0.22)" stroke="#84A9EA" strokeWidth="1.4" />
         </svg>
       );
+  }
+};
+
+const getBlueprintCaption = (projectId: string): string => {
+  switch (projectId) {
+    case 'obra-genebra':
+      return 'ELEVAÇÃO FRONTAL // 148 m² CONSTRUÍDOS // LOTE 300 m²';
+    case 'obra-siena':
+      return 'PLANTA INTEGRADA // 112 m² CONSTRUÍDOS // VERGAS MOLDADAS';
+    case 'obras-mercedes':
+      return 'PADRÃO CORPORATIVO // 320 m² // PISO DE ALTO TRÁFEGO';
+    default:
+      return 'SHOWROOM AUTOMOTIVO // 185 m² // CICLO RÁPIDO';
   }
 };
 
@@ -141,8 +142,13 @@ export const PortfolioSection: React.FC = () => {
                 className={`portfolio-card ${isSelected ? 'portfolio-card-active' : ''}`.trim()}
               >
                 <div className="portfolio-card-visual">
+                  <div className="portfolio-card-visual-top">
+                    <span className="portfolio-card-tag">{project.categoryLabel}</span>
+                  </div>
                   <ProjectBlueprintGraphic projectId={project.id} />
-                  <span className="portfolio-card-tag">{project.categoryLabel}</span>
+                  <div className="portfolio-card-blueprint-caption">
+                    {getBlueprintCaption(project.id)}
+                  </div>
                 </div>
 
                 <div className="portfolio-card-body">

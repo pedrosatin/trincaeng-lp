@@ -65,11 +65,18 @@ export const HeroSection: React.FC = () => {
             </div>
 
             <div className="blueprint-canvas">
+              <div className="blueprint-axis-bar" aria-hidden="true">
+                <span className="blueprint-axis-chip">EIXO A // GARAGEM DUPLA (6,00 m)</span>
+                <span className="blueprint-axis-chip blueprint-axis-chip-highlight">
+                  EIXO B-C // PÉ-DIREITO +4,65 m
+                </span>
+              </div>
+
               <svg
-                viewBox="0 0 540 310"
+                viewBox="0 0 520 220"
                 className="blueprint-elevation-svg"
                 role="img"
-                aria-label="Elevação frontal técnica de residência contemporânea com platibanda, garagem para dois carros e pé-direito elevado"
+                aria-label="Elevação frontal técnica de residência contemporânea com platibanda, garagem para dois carros, brises metálicos e fundação em baldrame"
               >
                 <defs>
                   <pattern id="bp-grid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -82,110 +89,122 @@ export const HeroSection: React.FC = () => {
                   </pattern>
                 </defs>
 
-                <rect width="540" height="310" fill="url(#bp-grid)" />
+                <rect width="520" height="220" fill="url(#bp-grid)" />
 
                 {/* Linhas de eixo estrutural */}
-                <line x1="60" y1="20" x2="60" y2="275" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1" />
-                <line x1="250" y1="20" x2="250" y2="275" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1" />
-                <line x1="480" y1="20" x2="480" y2="275" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1" />
+                <line x1="56" y1="14" x2="56" y2="204" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1.2" />
+                <line x1="246" y1="14" x2="246" y2="204" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1.2" />
+                <line x1="464" y1="14" x2="464" y2="204" stroke="#547EC9" strokeDasharray="4 4" strokeWidth="1.2" />
 
-                <circle cx="60" cy="20" r="9" fill="#0B1D36" stroke="#84A9EA" strokeWidth="1.2" />
-                <text x="60" y="23" textAnchor="middle" fill="#E2ECF9" fontSize="9" fontFamily="monospace">
-                  A
-                </text>
-                <circle cx="250" cy="20" r="9" fill="#0B1D36" stroke="#84A9EA" strokeWidth="1.2" />
-                <text x="250" y="23" textAnchor="middle" fill="#E2ECF9" fontSize="9" fontFamily="monospace">
-                  B
-                </text>
-                <circle cx="480" cy="20" r="9" fill="#0B1D36" stroke="#84A9EA" strokeWidth="1.2" />
-                <text x="480" y="23" textAnchor="middle" fill="#E2ECF9" fontSize="9" fontFamily="monospace">
-                  C
-                </text>
+                {/* Marcadores de eixo geométricos */}
+                <circle cx="56" cy="16" r="6" fill="#0B1D36" stroke="#84A9EA" strokeWidth="1.5" />
+                <circle cx="246" cy="16" r="6" fill="#0B1D36" stroke="#84A9EA" strokeWidth="1.5" />
+                <circle cx="464" cy="16" r="6" fill="#0B1D36" stroke="#DFB468" strokeWidth="1.5" />
 
                 {/* Linha do solo / Cota 0.00 */}
-                <line x1="30" y1="250" x2="510" y2="250" stroke="#DFB468" strokeWidth="2" />
-                {/* Fundação e vigas baldrame */}
-                <rect x="60" y="250" width="420" height="14" fill="rgba(223, 180, 104, 0.22)" stroke="#DFB468" strokeWidth="1.2" />
-                <rect x="75" y="264" width="12" height="22" fill="rgba(84, 126, 201, 0.35)" stroke="#84A9EA" strokeWidth="1" />
-                <rect x="244" y="264" width="12" height="22" fill="rgba(84, 126, 201, 0.35)" stroke="#84A9EA" strokeWidth="1" />
-                <rect x="455" y="264" width="12" height="22" fill="rgba(84, 126, 201, 0.35)" stroke="#84A9EA" strokeWidth="1" />
+                <line x1="24" y1="176" x2="496" y2="176" stroke="#DFB468" strokeWidth="2.2" />
 
-                {/* Volume esquerdo: Garagem e acesso */}
+                {/* Fundação, vigas baldrame e estacas */}
                 <rect
-                  x="60"
-                  y="112"
+                  x="56"
+                  y="176"
+                  width="408"
+                  height="14"
+                  fill="rgba(223, 180, 104, 0.24)"
+                  stroke="#DFB468"
+                  strokeWidth="1.4"
+                />
+                <rect x="74" y="190" width="14" height="20" fill="rgba(84, 126, 201, 0.38)" stroke="#84A9EA" strokeWidth="1.2" />
+                <rect x="239" y="190" width="14" height="20" fill="rgba(84, 126, 201, 0.38)" stroke="#84A9EA" strokeWidth="1.2" />
+                <rect x="438" y="190" width="14" height="20" fill="rgba(84, 126, 201, 0.38)" stroke="#84A9EA" strokeWidth="1.2" />
+
+                {/* Volume esquerdo: Garagem dupla e acesso coberto */}
+                <rect
+                  x="56"
+                  y="68"
                   width="190"
-                  height="138"
-                  fill="rgba(37, 62, 115, 0.38)"
+                  height="108"
+                  fill="rgba(37, 62, 115, 0.42)"
                   stroke="#94B5F2"
                   strokeWidth="1.6"
                 />
-                {/* Viga superior da garagem / marquise */}
+                {/* Viga superior da garagem / marquise em balanço */}
                 <rect
-                  x="52"
-                  y="102"
-                  width="206"
-                  height="22"
-                  fill="rgba(84, 126, 201, 0.42)"
+                  x="46"
+                  y="56"
+                  width="208"
+                  height="18"
+                  fill="rgba(84, 126, 201, 0.46)"
                   stroke="#BFD4FA"
-                  strokeWidth="1.5"
+                  strokeWidth="1.6"
+                />
+                {/* Vão interno da garagem */}
+                <rect
+                  x="74"
+                  y="92"
+                  width="154"
+                  height="84"
+                  fill="rgba(8, 24, 48, 0.45)"
+                  stroke="#547EC9"
+                  strokeWidth="1.2"
                 />
 
                 {/* Volume direito: Sala com pé-direito duplo e platibanda alta */}
                 <rect
-                  x="250"
-                  y="68"
-                  width="230"
-                  height="182"
-                  fill="rgba(24, 45, 87, 0.65)"
+                  x="246"
+                  y="30"
+                  width="218"
+                  height="146"
+                  fill="rgba(24, 45, 87, 0.68)"
                   stroke="#D1E1FC"
                   strokeWidth="1.8"
                 />
-                {/* Detalhe da junta laje/platibanda reforçada */}
-                <line x1="250" y1="92" x2="480" y2="92" stroke="#DFB468" strokeWidth="2" strokeDasharray="6 3" />
+                {/* Rufo superior da platibanda */}
+                <line x1="244" y1="30" x2="466" y2="30" stroke="#DFB468" strokeWidth="2.6" />
+                {/* Detalhe da junta laje/platibanda reforçada com tela */}
+                <line
+                  x1="246"
+                  y1="54"
+                  x2="464"
+                  y2="54"
+                  stroke="#DFB468"
+                  strokeWidth="2.2"
+                  strokeDasharray="6 4"
+                />
 
                 {/* Brises verticais metálicos na fachada */}
-                <g stroke="#DFB468" strokeWidth="1.4" opacity="0.85">
-                  <line x1="270" y1="94" x2="270" y2="250" />
-                  <line x1="280" y1="94" x2="280" y2="250" />
-                  <line x1="290" y1="94" x2="290" y2="250" />
-                  <line x1="300" y1="94" x2="300" y2="250" />
-                  <line x1="310" y1="94" x2="310" y2="250" />
+                <g stroke="#DFB468" strokeWidth="1.6" opacity="0.9">
+                  <line x1="268" y1="56" x2="268" y2="176" />
+                  <line x1="278" y1="56" x2="278" y2="176" />
+                  <line x1="288" y1="56" x2="288" y2="176" />
+                  <line x1="298" y1="56" x2="298" y2="176" />
+                  <line x1="308" y1="56" x2="308" y2="176" />
                 </g>
 
                 {/* Esquadria de vidro de pé-direito elevado */}
                 <rect
-                  x="332"
-                  y="108"
-                  width="124"
-                  height="142"
-                  fill="rgba(132, 169, 234, 0.16)"
+                  x="328"
+                  y="68"
+                  width="116"
+                  height="108"
+                  fill="rgba(132, 169, 234, 0.18)"
                   stroke="#84A9EA"
-                  strokeWidth="1.4"
+                  strokeWidth="1.5"
                 />
-                <line x1="394" y1="108" x2="394" y2="250" stroke="#84A9EA" strokeWidth="1.2" />
-                <line x1="332" y1="175" x2="456" y2="175" stroke="#84A9EA" strokeWidth="1" />
-
-                {/* Cotas técnicas */}
-                <text x="492" y="75" fill="#DFB468" fontSize="9.5" fontFamily="monospace">
-                  +4,65 m
-                </text>
-                <text x="492" y="96" fill="#94B5F2" fontSize="9" fontFamily="monospace">
-                  JUNTA TELA
-                </text>
-                <text x="492" y="247" fill="#DFB468" fontSize="9.5" fontFamily="monospace">
-                  0,00 m
-                </text>
-                <text x="72" y="142" fill="#D1E1FC" fontSize="10" fontFamily="monospace">
-                  GARAGEM DUPLA (6,00 m)
-                </text>
-                <text x="342" y="84" fill="#D1E1FC" fontSize="9.5" fontFamily="monospace">
-                  PLATIBANDA IMPERMEABILIZADA
-                </text>
-                <text x="92" y="299" fill="#94A7C4" fontSize="9.5" fontFamily="monospace">
-                  BALDRAME BLINDADO NAS 3 FACES + ESTACAS EM CONCRETO
-                </text>
+                <line x1="386" y1="68" x2="386" y2="176" stroke="#84A9EA" strokeWidth="1.2" />
+                <line x1="328" y1="120" x2="444" y2="120" stroke="#84A9EA" strokeWidth="1.1" />
               </svg>
+
+              <ul className="blueprint-callouts" aria-label="Destaques técnicos da prancha">
+                <li className="blueprint-callout-item">
+                  <span className="blueprint-callout-dot" aria-hidden="true" />
+                  <span>Platibanda impermeabilizada com junta elástica em tela</span>
+                </li>
+                <li className="blueprint-callout-item">
+                  <span className="blueprint-callout-dot" aria-hidden="true" />
+                  <span>Baldrame blindado nas 3 faces + estacas em concreto (cota 0,00 m)</span>
+                </li>
+              </ul>
             </div>
 
             <div className="blueprint-specs-grid">

@@ -1,6 +1,36 @@
 import React, { useState } from 'react';
 import { ENGINEERING_STANDARDS, type EngineeringStandard } from '../data/engineeringStandards';
 
+const DIAGRAM_CALLOUTS: Record<
+  EngineeringStandard['diagramType'],
+  readonly { readonly num: string; readonly label: string }[]
+> = {
+  platibanda: [
+    { num: '01', label: 'Rufo metálico com pingadeira e calha impermeabilizada' },
+    { num: '02', label: 'Alvenaria da platibanda em bloco cerâmico estrutural' },
+    { num: '03', label: 'Tela metálica ancorada na junta entre laje e alvenaria' },
+    { num: '04', label: 'Laje de cobertura em concreto armado sem fissura na fachada' },
+  ],
+  hidraulica: [
+    { num: '01', label: 'Barrilete superior pressurizado com vazão equilibrada' },
+    { num: '02', label: 'Coluna exclusiva para o chuveiro sem perda de pressão' },
+    { num: '03', label: 'Registro posicionado fora da linha de queda de água' },
+    { num: '04', label: 'Ramal independente para bancada e vaso sanitário' },
+  ],
+  gas: [
+    { num: '01', label: 'Abrigo externo ventilado para cilindros GLP' },
+    { num: '02', label: 'Tubulação embutida em cobre ou multicamadas sem mangueira aparente' },
+    { num: '03', label: 'Registro de esfera em local visível e de fácil alcance' },
+    { num: '04', label: 'Ensaio de estanqueidade com manômetro antes de fechar o piso' },
+  ],
+  baldrame: [
+    { num: '01', label: 'Viga baldrame impermeabilizada nas 3 faces (topo e laterais)' },
+    { num: '02', label: 'Primeiras fiadas assentadas com argamassa polimérica hidrofugada' },
+    { num: '03', label: 'Bloqueio definitivo contra subida de umidade capilar do solo' },
+    { num: '04', label: 'Pintura e massa corrida íntegras no rodapé interno e externo' },
+  ],
+};
+
 const TechnicalCrossSectionSvg: React.FC<{
   readonly diagramType: EngineeringStandard['diagramType'];
 }> = ({ diagramType }) => {
@@ -8,152 +38,107 @@ const TechnicalCrossSectionSvg: React.FC<{
     case 'platibanda':
       return (
         <svg
-          viewBox="0 0 460 250"
+          viewBox="0 0 420 185"
           className="eng-diagram-svg"
           role="img"
           aria-label="Corte técnico mostrando reforço com tela metálica entre a laje de concreto e a alvenaria da platibanda"
         >
-          <rect width="460" height="250" fill="#07162C" />
+          <rect width="420" height="185" fill="#07162C" />
           {/* Alvenaria da platibanda */}
-          <rect x="80" y="38" width="90" height="92" fill="#1B3563" stroke="#84A9EA" strokeWidth="1.5" />
-          <line x1="80" y1="68" x2="170" y2="68" stroke="#547EC9" strokeWidth="1" />
-          <line x1="80" y1="98" x2="170" y2="98" stroke="#547EC9" strokeWidth="1" />
+          <rect x="96" y="26" width="84" height="72" fill="#1B3563" stroke="#84A9EA" strokeWidth="1.6" />
+          <line x1="96" y1="50" x2="180" y2="50" stroke="#547EC9" strokeWidth="1.2" />
+          <line x1="96" y1="74" x2="180" y2="74" stroke="#547EC9" strokeWidth="1.2" />
           {/* Rufo metálico com pingadeira */}
-          <polyline points="68,48 76,30 180,30 184,46" fill="none" stroke="#DFB468" strokeWidth="2.5" />
+          <polyline points="82,36 90,18 190,18 196,34" fill="none" stroke="#DFB468" strokeWidth="2.8" />
           {/* Laje de cobertura e viga */}
-          <rect x="80" y="130" width="290" height="34" fill="#274985" stroke="#D1E1FC" strokeWidth="1.8" />
+          <rect x="96" y="98" width="248" height="32" fill="#274985" stroke="#D1E1FC" strokeWidth="1.8" />
           {/* Tela eletrossoldada de reforço na interface externa */}
-          <line x1="68" y1="95" x2="68" y2="165" stroke="#DFB468" strokeWidth="3.5" strokeDasharray="4 3" />
+          <line x1="82" y1="68" x2="82" y2="132" stroke="#DFB468" strokeWidth="3.6" strokeDasharray="5 3" />
           {/* Reboco externo contínuo */}
-          <rect x="58" y="42" width="10" height="175" fill="rgba(223, 180, 104, 0.28)" stroke="#DFB468" strokeWidth="1.2" />
+          <rect x="70" y="28" width="12" height="140" fill="rgba(223, 180, 104, 0.28)" stroke="#DFB468" strokeWidth="1.4" />
           {/* Parede inferior */}
-          <rect x="80" y="164" width="90" height="60" fill="#162A50" stroke="#84A9EA" strokeWidth="1.5" />
-          {/* Textos */}
-          <text x="195" y="42" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            1. RUFO COM PINGADEIRA E CALHA IMPERMEABILIZADA
-          </text>
-          <text x="195" y="85" fill="#D1E1FC" fontSize="10" fontFamily="monospace">
-            2. ALVENARIA DA PLATIBANDA (BLOCO CERÂMICO)
-          </text>
-          <text x="195" y="118" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            3. TELA METÁLICA ANCORADA NA JUNTA LAJE/TIJOLO
-          </text>
-          <text x="195" y="150" fill="#D1E1FC" fontSize="10" fontFamily="monospace">
-            4. LAJE DE COBERTURA EM CONCRETO ARMADO
-          </text>
-          <text x="195" y="198" fill="#94A7C4" fontSize="10" fontFamily="monospace">
-            RESULTADO: ZERO TRINCA HORIZONTAL NA FACHADA
-          </text>
+          <rect x="96" y="130" width="84" height="42" fill="#162A50" stroke="#84A9EA" strokeWidth="1.6" />
+          {/* Linhas de chamada técnicas */}
+          <line x1="196" y1="24" x2="344" y2="24" stroke="#DFB468" strokeDasharray="4 4" strokeWidth="1.3" />
+          <line x1="180" y1="62" x2="344" y2="62" stroke="#84A9EA" strokeDasharray="4 4" strokeWidth="1.3" />
+          <circle cx="344" cy="24" r="5" fill="#DFB468" />
+          <circle cx="344" cy="62" r="5" fill="#84A9EA" />
+          <circle cx="82" cy="98" r="5" fill="#DFB468" />
+          <circle cx="260" cy="114" r="5" fill="#D1E1FC" />
         </svg>
       );
     case 'hidraulica':
       return (
         <svg
-          viewBox="0 0 460 250"
+          viewBox="0 0 420 185"
           className="eng-diagram-svg"
           role="img"
           aria-label="Esquema hidráulico com prumadas independentes para chuveiro e bancada, com registro posicionado fora da área de banho"
         >
-          <rect width="460" height="250" fill="#07162C" />
+          <rect width="420" height="185" fill="#07162C" />
           {/* Reservatório / Pressurizador superior */}
-          <rect x="60" y="24" width="130" height="32" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.6" />
-          <text x="72" y="44" fill="#E2ECF9" fontSize="9.5" fontFamily="monospace">
-            BARRILETE PRESSURIZADO
-          </text>
+          <rect x="64" y="20" width="140" height="32" fill="#1D396B" stroke="#D1E1FC" strokeWidth="1.8" />
           {/* Coluna exclusiva do chuveiro */}
-          <polyline points="90,56 90,190 190,190 190,82 225,82" fill="none" stroke="#DFB468" strokeWidth="3" />
+          <polyline points="98,52 98,156 205,156 205,74 252,74" fill="none" stroke="#DFB468" strokeWidth="3.2" />
           {/* Coluna separada para lavatório e vaso */}
-          <polyline points="155,56 155,155 335,155" fill="none" stroke="#547EC9" strokeWidth="2.2" />
+          <polyline points="168,52 168,128 346,128" fill="none" stroke="#547EC9" strokeWidth="2.4" />
           {/* Ponto do chuveiro */}
-          <circle cx="232" cy="82" r="7" fill="#DFB468" />
+          <circle cx="260" cy="74" r="7" fill="#DFB468" />
           {/* Registro deslocado fora do jato */}
-          <rect x="172" y="132" width="16" height="16" fill="#07162C" stroke="#DFB468" strokeWidth="2" />
-          <text x="255" y="86" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            COLUNA DEDICADA DO CHUVEIRO
-          </text>
-          <text x="200" y="143" fill="#E2ECF9" fontSize="10" fontFamily="monospace">
-            REGISTRO FORA DO JATO DE ÁGUA
-          </text>
-          <text x="210" y="176" fill="#84A9EA" fontSize="10" fontFamily="monospace">
-            RAMAL SEPARADO (TORNEIRA / VASO)
-          </text>
-          <text x="60" y="224" fill="#94A7C4" fontSize="10" fontFamily="monospace">
-            PRESSÃO CONSTANTE MESMO COM TORNEIRA ABERTA
-          </text>
+          <rect x="196" y="106" width="18" height="18" fill="#07162C" stroke="#DFB468" strokeWidth="2.2" />
+          {/* Pontos do ramal separado */}
+          <circle cx="290" cy="128" r="5.5" fill="#84A9EA" />
+          <circle cx="346" cy="128" r="5.5" fill="#84A9EA" />
         </svg>
       );
     case 'gas':
       return (
         <svg
-          viewBox="0 0 460 250"
+          viewBox="0 0 420 185"
           className="eng-diagram-svg"
           role="img"
           aria-label="Corte esquemático de rede de gás embutida em cobre ligando o abrigo externo ao cooktop interno"
         >
-          <rect width="460" height="250" fill="#07162C" />
+          <rect width="420" height="185" fill="#07162C" />
           {/* Parede divisória externo/interno */}
-          <rect x="195" y="36" width="18" height="154" fill="#253E73" stroke="#84A9EA" strokeWidth="1.5" />
+          <rect x="196" y="22" width="18" height="122" fill="#253E73" stroke="#84A9EA" strokeWidth="1.6" />
           {/* Contrapiso */}
-          <rect x="40" y="190" width="380" height="24" fill="#162A50" stroke="#547EC9" strokeWidth="1.5" />
+          <rect x="42" y="144" width="336" height="24" fill="#162A50" stroke="#547EC9" strokeWidth="1.6" />
           {/* Abrigo externo de GLP */}
-          <rect x="75" y="110" width="85" height="80" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.6" />
-          <text x="86" y="148" fill="#E2ECF9" fontSize="9.5" fontFamily="monospace">
-            ABRIGO GLP
-          </text>
-          <text x="86" y="162" fill="#94A7C4" fontSize="8.5" fontFamily="monospace">
-            EXTERNO
-          </text>
+          <rect x="74" y="72" width="84" height="72" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.7" />
+          {/* Cilindros internos */}
+          <rect x="92" y="90" width="20" height="46" rx="4" fill="#274985" stroke="#84A9EA" strokeWidth="1.2" />
+          <rect x="120" y="90" width="20" height="46" rx="4" fill="#274985" stroke="#84A9EA" strokeWidth="1.2" />
           {/* Bancada da cozinha */}
-          <rect x="265" y="122" width="125" height="68" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.6" />
+          <rect x="256" y="84" width="108" height="60" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.7" />
           {/* Tubulação embutida em cobre */}
-          <polyline points="140,175 140,202 315,202 315,122" fill="none" stroke="#DFB468" strokeWidth="3.2" />
-          <circle cx="315" cy="148" r="6" fill="#DFB468" />
-          <text x="52" y="65" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            ENSAIO DE ESTANQUEIDADE COM MANÔMETRO ANTES DO PISO
-          </text>
-          <text x="235" y="106" fill="#E2ECF9" fontSize="10" fontFamily="monospace">
-            REGISTRO DE ESFERA ACESSÍVEL
-          </text>
-          <text x="115" y="234" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            TUBULAÇÃO EMBUTIDA (SEM MANGUEIRA APARENTE)
-          </text>
+          <polyline points="130,136 130,156 306,156 306,84" fill="none" stroke="#DFB468" strokeWidth="3.4" />
+          <circle cx="306" cy="108" r="6.5" fill="#DFB468" />
         </svg>
       );
     case 'baldrame':
       return (
         <svg
-          viewBox="0 0 460 250"
+          viewBox="0 0 420 185"
           className="eng-diagram-svg"
           role="img"
           aria-label="Corte técnico de viga baldrame impermeabilizada nas três faces e primeiras fiadas com aditivo hidrofugante"
         >
-          <rect width="460" height="250" fill="#07162C" />
+          <rect width="420" height="185" fill="#07162C" />
           {/* Solo */}
-          <rect x="40" y="155" width="380" height="65" fill="#10213D" stroke="#3B5FA3" strokeWidth="1" />
+          <rect x="44" y="118" width="332" height="50" fill="#10213D" stroke="#3B5FA3" strokeWidth="1.2" />
           {/* Viga baldrame */}
-          <rect x="130" y="125" width="90" height="68" fill="#253E73" stroke="#84A9EA" strokeWidth="1.5" />
+          <rect x="156" y="92" width="108" height="62" fill="#253E73" stroke="#84A9EA" strokeWidth="1.6" />
           {/* Blindagem nas 3 faces (topo e laterais) */}
           <polyline
-            points="126,190 126,121 224,121 224,190"
+            points="150,152 150,86 270,86 270,152"
             fill="none"
             stroke="#DFB468"
             strokeWidth="4.5"
           />
           {/* Primeiras fiadas de alvenaria hidrofugadas */}
-          <rect x="145" y="45" width="60" height="76" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.5" />
-          <rect x="145" y="92" width="60" height="29" fill="rgba(223, 180, 104, 0.25)" stroke="#DFB468" strokeWidth="1.2" />
-          <text x="242" y="75" fill="#D1E1FC" fontSize="10" fontFamily="monospace">
-            1. PAREDE COM PINTURA ÍNTEGRA
-          </text>
-          <text x="242" y="110" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            2. PRIMEIRAS FIADAS HIDROFUGADAS
-          </text>
-          <text x="242" y="145" fill="#DFB468" fontSize="10" fontFamily="monospace">
-            3. BALDRAME IMPERMEABILIZADO (3 FACES)
-          </text>
-          <text x="242" y="182" fill="#94A7C4" fontSize="10" fontFamily="monospace">
-            4. BLOQUEIO DE UMIDADE CAPILAR DO SOLO
-          </text>
+          <rect x="176" y="22" width="68" height="64" fill="#1B3563" stroke="#D1E1FC" strokeWidth="1.6" />
+          <rect x="176" y="58" width="68" height="28" fill="rgba(223, 180, 104, 0.28)" stroke="#DFB468" strokeWidth="1.4" />
         </svg>
       );
   }
@@ -164,6 +149,8 @@ export const EngineeringNotebookSection: React.FC = () => {
 
   const currentStandard: EngineeringStandard =
     ENGINEERING_STANDARDS.find((item) => item.id === activeId) ?? ENGINEERING_STANDARDS[0]!;
+
+  const callouts = DIAGRAM_CALLOUTS[currentStandard.diagramType];
 
   return (
     <section
@@ -222,6 +209,14 @@ export const EngineeringNotebookSection: React.FC = () => {
 
             <div className="eng-diagram-container">
               <TechnicalCrossSectionSvg diagramType={currentStandard.diagramType} />
+              <ol className="eng-diagram-legend" aria-label="Legenda técnica do corte esquemático">
+                {callouts.map((c) => (
+                  <li key={c.num} className="eng-diagram-legend-item">
+                    <span className="eng-diagram-legend-num">{c.num}</span>
+                    <span>{c.label}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div className="eng-comparison-columns">
