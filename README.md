@@ -35,3 +35,13 @@ npm run dev          # Servidor de desenvolvimento Vite
 npm run check        # Executa oxlint, tsc -b e vitest run
 npm run build        # Gera o pacote estático pré-renderizado em dist/
 ```
+
+## Publicação
+
+O deploy roda pelo GitHub Actions (`.github/workflows/pages.yml`) a cada push na `main` e publica em [trincaconstrutora.com.br](https://trincaconstrutora.com.br/) pelo GitHub Pages. O arquivo `public/CNAME` guarda o domínio e a zona DNS fica no Registro.br:
+
+| Tipo | Nome | Dados |
+|---|---|---|
+| A | `trincaconstrutora.com.br` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| AAAA | `trincaconstrutora.com.br` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| CNAME | `www.trincaconstrutora.com.br` | `pedrosatin.github.io` |

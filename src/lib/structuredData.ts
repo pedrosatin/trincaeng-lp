@@ -7,14 +7,14 @@ export function buildStructuredData(): Record<string, unknown> {
     '@graph': [
       {
         '@type': 'GeneralContractor',
-        '@id': 'https://trincaengenharia.com.br/#organization',
+        '@id': 'https://trincaconstrutora.com.br/#organization',
         name: COMPANY.brandName,
         alternateName: COMPANY.tradeName,
         legalName: COMPANY.legalName,
         taxID: COMPANY.cnpj,
         description:
           'Construtora e escritório de engenharia civil em Maringá - PR especializado em construções financiadas pela Caixa Econômica Federal, da escolha do terreno e aprovação de projetos até a entrega das chaves.',
-        url: 'https://trincaengenharia.com.br/',
+        url: 'https://trincaconstrutora.com.br/',
         telephone: '+55-44-99879-3999',
         address: {
           '@type': 'PostalAddress',
@@ -38,7 +38,7 @@ export function buildStructuredData(): Record<string, unknown> {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://trincaengenharia.com.br/#faq',
+        '@id': 'https://trincaconstrutora.com.br/#faq',
         mainEntity: FAQ_ITEMS.map((item) => ({
           '@type': 'Question',
           name: item.question,
