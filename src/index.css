@@ -2,10 +2,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: #061224;
+  overflow-x: clip;
 }

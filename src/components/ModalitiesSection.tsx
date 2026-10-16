@@ -135,43 +135,61 @@ export const ModalitiesSection: React.FC = () => {
               <tbody>
                 <tr>
                   <th scope="row">Custo por metro quadrado</th>
-                  <td className="col-highlight">
+                  <td className="col-highlight" data-label="Construir com a Trinca Engenharia">
                     <strong>Custo real de engenharia (20% a 30% menor)</strong>, sem margem especulativa de incorporador.
                   </td>
-                  <td>Inclui lucro imobiliário de 25% a 35% sobre o valor gasto na obra.</td>
-                  <td>Desperdício médio de 15% a 25% em retrabalho e compras picadas sem cotação técnica.</td>
+                  <td data-label="Comprar imóvel pronto">
+                    Inclui lucro imobiliário de 25% a 35% sobre o valor gasto na obra.
+                  </td>
+                  <td data-label="Obra autônoma sem construtora">
+                    Desperdício médio de 15% a 25% em retrabalho e compras picadas sem cotação técnica.
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Imposto de transmissão (ITBI)</th>
-                  <td className="col-highlight">
+                  <td className="col-highlight" data-label="Construir com a Trinca Engenharia">
                     <strong>Incide apenas sobre o valor do terreno</strong> na aquisição.
                   </td>
-                  <td>Incide sobre o valor total do terreno somado à casa pronta.</td>
-                  <td>Incide sobre o terreno, mas exige gestão própria de CNO e ISS de mão de obra.</td>
+                  <td data-label="Comprar imóvel pronto">
+                    Incide sobre o valor total do terreno somado à casa pronta.
+                  </td>
+                  <td data-label="Obra autônoma sem construtora">
+                    Incide sobre o terreno, mas exige gestão própria de CNO e ISS de mão de obra.
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Planta e acabamentos</th>
-                  <td className="col-highlight">
+                  <td className="col-highlight" data-label="Construir com a Trinca Engenharia">
                     <strong>100% personalizados</strong> para sua rotina, número de suítes e escolha de revestimentos.
                   </td>
-                  <td>Planta padronizada e acabamentos genéricos escolhidos para venda rápida.</td>
-                  <td>Risco de incompatibilidade entre arquitetura, estrutura e orçamento disponível.</td>
+                  <td data-label="Comprar imóvel pronto">
+                    Planta padronizada e acabamentos genéricos escolhidos para venda rápida.
+                  </td>
+                  <td data-label="Obra autônoma sem construtora">
+                    Risco de incompatibilidade entre arquitetura, estrutura e orçamento disponível.
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Burocracia Caixa e Prefeitura</th>
-                  <td className="col-highlight">
+                  <td className="col-highlight" data-label="Construir com a Trinca Engenharia">
                     <strong>Conduzida integralmente pela Trinca</strong> (PCI, alvará, ART, medições PLS e Habite-se).
                   </td>
-                  <td>Apenas transferência de imóvel pronto.</td>
-                  <td>Proprietário precisa preencher planilhas técnicas da Caixa e gerenciar vistorias sozinho.</td>
+                  <td data-label="Comprar imóvel pronto">Apenas transferência de imóvel pronto.</td>
+                  <td data-label="Obra autônoma sem construtora">
+                    Proprietário precisa preencher planilhas técnicas da Caixa e gerenciar vistorias sozinho.
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Responsabilidade e garantia</th>
-                  <td className="col-highlight">
+                  <td className="col-highlight" data-label="Construir com a Trinca Engenharia">
                     <strong>Contrato único com CNPJ, ART de execução</strong> e garantia legal de 5 anos (NBR 15575).
                   </td>
-                  <td>Vícios construtivos ocultos sob a pintura já finalizada.</td>
-                  <td>Ausência de garantia unificada entre diferentes prestadores informais.</td>
+                  <td data-label="Comprar imóvel pronto">
+                    Vícios construtivos ocultos sob a pintura já finalizada.
+                  </td>
+                  <td data-label="Obra autônoma sem construtora">
+                    Ausência de garantia unificada entre diferentes prestadores informais.
+                  </td>
                 </tr>
               </tbody>
             </table>

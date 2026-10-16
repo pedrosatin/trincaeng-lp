@@ -54,6 +54,19 @@ describe('LandingPage', () => {
     ).toBeInTheDocument();
   });
 
+  it('toggles the mobile navigation drawer and closes it on Escape', () => {
+    render(<LandingPage />);
+
+    const toggleButton = screen.getByRole('button', { name: /Abrir menu de navegação/i });
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(toggleButton);
+    expect(screen.getByRole('navigation', { name: /Menu de navegação móvel/i })).toBeInTheDocument();
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(screen.queryByRole('navigation', { name: /Menu de navegação móvel/i })).not.toBeInTheDocument();
+  });
+
   it('contains no em-dashes or en-dashes in rendered text (unslop-br compliance)', () => {
     const { container } = render(<LandingPage />);
     const visibleText = container.textContent ?? '';
