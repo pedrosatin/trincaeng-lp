@@ -42,17 +42,17 @@ export const HeroSection: React.FC = () => {
             <div className="hero-metric-card">
               <dt className="hero-metric-label">Economia patrimonial</dt>
               <dd className="hero-metric-value">20% a 30%</dd>
-              <span className="hero-metric-note">Abaixo do valor de compra de imóvel pronto equivalente</span>
+              <dd className="hero-metric-note">Abaixo do valor de compra de imóvel pronto equivalente</dd>
             </div>
             <div className="hero-metric-card">
               <dt className="hero-metric-label">Teto MCMV 2026</dt>
               <dd className="hero-metric-value">Até R$ 600 mil</dd>
-              <span className="hero-metric-note">Faixas 1 a 4 para renda familiar até R$ 13.000</span>
+              <dd className="hero-metric-note">Faixas 1 a 4 para renda familiar até R$ 13.000</dd>
             </div>
             <div className="hero-metric-card">
               <dt className="hero-metric-label">Contrato unificado</dt>
               <dd className="hero-metric-value">Lote + Obra</dd>
-              <span className="hero-metric-note">Aquisição de terreno e construção no mesmo financiamento</span>
+              <dd className="hero-metric-note">Aquisição de terreno e construção no mesmo financiamento</dd>
             </div>
           </dl>
         </div>
