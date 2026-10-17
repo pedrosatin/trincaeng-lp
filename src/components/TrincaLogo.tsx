@@ -45,7 +45,7 @@ export const TrincaLogo: React.FC<TrincaLogoProps> = ({
       <div className="trinca-logo-text">
         <span className="trinca-logo-title" style={{ color: primaryText }}>
           TRINCA
-        </span>
+        </span>{' '}
         <span className="trinca-logo-subtitle" style={{ color: secondaryText }}>
           ENGENHARIA
         </span>

@@ -81,4 +81,29 @@ describe('LandingPage', () => {
     expect(visibleText).not.toContain('—');
     expect(visibleText).not.toContain('–');
   });
+
+  it('mantém só DT e DD como filhos diretos de cada grupo do dl das métricas do hero', () => {
+    const { container } = render(<LandingPage />);
+    const grupos = container.querySelectorAll('.hero-metrics > div');
+
+    expect(grupos.length).toBeGreaterThan(0);
+    grupos.forEach((grupo) => {
+      const tags = Array.from(grupo.children).map((filho) => filho.tagName);
+      tags.forEach((tag) => expect(['DT', 'DD']).toContain(tag));
+      expect(tags).toContain('DT');
+      expect(tags).toContain('DD');
+    });
+  });
+
+  it('mantém o texto visível da marca contido no nome acessível do link', () => {
+    const { container } = render(<LandingPage />);
+    const marca = container.querySelector('.site-header-brand');
+
+    expect(marca).not.toBeNull();
+    const visivel = (marca?.textContent ?? '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const nomeAcessivel = (marca?.getAttribute('aria-label') ?? '').toLowerCase();
+
+    expect(visivel).toBe('trinca engenharia');
+    expect(nomeAcessivel).toContain(visivel);
+  });
 });

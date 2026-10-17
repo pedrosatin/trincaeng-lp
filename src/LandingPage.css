@@ -530,6 +530,7 @@
 
 .hero-metric-note {
   display: block;
+  margin: 0;
   font-size: 0.8125rem;
   color: var(--ink-on-dark-muted);
   line-height: 1.4;
